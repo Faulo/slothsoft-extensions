@@ -1,0 +1,4 @@
+Extensions
+==========
+
+Some Firefox extensions.
