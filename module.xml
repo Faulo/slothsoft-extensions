@@ -22,6 +22,12 @@ Llo
     <resource-directory name="xsl" path="template" type="application/xslt+xml"/>
     <resource-directory name="dictionary" path="dictionary" type="application/xml"/>
     <resource-directory name="pages" path="pages" type="application/xml"/>
+    <directory name="static">
+      <resource-directory name="missingSloth-slothsoft.net" path="missingSloth@slothsoft.net" type="application/x-xpinstall"/>
+      <resource-directory name="missingSloth-slothsoft.net-manifest" path="missingSloth@slothsoft.net" type="application/rdf+xml"/>
+      <resource-directory name="missingSloth-slothsoft.net-signing" path="missingSloth@slothsoft.net/signing" type="*/*"/>
+      <resource-directory name="update" path="update" type="application/rdf+xml"/>
+    </directory>
     <fragment name="update">
       <use-template ref="xsl/update-rdf"/>
       <use-document ref="data/repository"/>
@@ -36,11 +42,5 @@ Llo
       <use-template ref="xsl/missingSloth.emoji"/>
       <use-document ref="data/missingSloth.emoji"/>
     </fragment>
-    <directory name="static">
-      <resource-directory name="missingSloth@slothsoft.net" path="missingSloth@slothsoft.net" type="application/x-xpinstall"/>
-      <resource-directory name="missingSloth@slothsoft.net-manifest" path="missingSloth@slothsoft.net" type="application/rdf+xml"/>
-      <resource-directory name="missingSloth@slothsoft.net-signing" path="missingSloth@slothsoft.net/signing" type="*/*"/>
-      <resource-directory name="update" path="update" type="application/rdf+xml"/>
-    </directory>
   </assets>
 </module>
