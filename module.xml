@@ -1,27 +1,46 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module>
-	<fragment name="update">
-		<template name="update-rdf" />
-		<data name="repository" load="xml" />
-		<param name="standalone" scope="global" />
-	</fragment>
+<?xml version="1.0"?>
+<module xmlns="http://schema.slothsoft.net/farah/module" xmlns:sfm="http://schema.slothsoft.net/farah/module">
+  <!--
+Farah Module Manifest
 
-	<fragment name="home-missingSloth">
-		<template name="home" />
-		<resDir name="missingSloth@slothsoft.net" load="status" as="extension" />
-	</fragment>
+Module: extensions
+Vendor: slothsoft
+Farah ID: farah://slothsoft@extensions
+Composer ID: slothsoft/extensions
 
-	<fragment name="missingSloth-emoji">
-		<param name="standalone" scope="global" />
-		<template name="missingSloth.emoji" />
-		<data name="missingSloth.emoji" />
-	</fragment>
+Homepage: http://farah.slothsoft.net/modules/extensions
+Packagist: https://packagist.org/packages/slothsoft/extensions
+GitHub: https://github.com/Faulo/slothsoft-extensions
 
-	<resourceDir name="missingSloth@slothsoft.net" path="missingSloth@slothsoft.net"
-		type="application/x-xpinstall" />
-	<resourceDir name="missingSloth@slothsoft.net-manifest"
-		path="missingSloth@slothsoft.net" type="application/rdf+xml" />
-	<resourceDir name="missingSloth@slothsoft.net-signing"
-		path="missingSloth@slothsoft.net/signing" type="*/*" />
-	<resourceDir name="update" path="update" type="application/rdf+xml" />
+Llo
+-->
+  <default-configuration/>
+  <assets>
+    <resource-directory name="data" path="data" type="application/x-php"/>
+    <resource-directory name="css" path="stylesheet" type="text/css"/>
+    <resource-directory name="js" path="script" type="application/javascript"/>
+    <resource-directory name="xsl" path="template" type="application/xslt+xml"/>
+    <resource-directory name="dictionary" path="dictionary" type="application/xml"/>
+    <resource-directory name="pages" path="pages" type="application/xml"/>
+    <fragment name="update">
+      <use-template ref="xsl/update-rdf"/>
+      <use-document ref="data/repository"/>
+      <param name="standalone" scope="global"/>
+    </fragment>
+    <fragment name="home-missingSloth">
+      <use-template ref="xsl/home"/>
+      <use-document as="extension" ref="static/missingSloth@slothsoft.net"/>
+    </fragment>
+    <fragment name="missingSloth-emoji">
+      <param name="standalone" scope="global"/>
+      <use-template ref="xsl/missingSloth.emoji"/>
+      <use-document ref="data/missingSloth.emoji"/>
+    </fragment>
+    <directory name="static">
+      <resource-directory name="missingSloth@slothsoft.net" type="application/x-xpinstall" path="missingSloth@slothsoft.net"/>
+      <resource-directory name="missingSloth@slothsoft.net-manifest" type="application/rdf+xml" path="missingSloth@slothsoft.net"/>
+      <resource-directory name="missingSloth@slothsoft.net-signing" type="*/*" path="missingSloth@slothsoft.net/signing"/>
+      <resource-directory name="update" type="application/rdf+xml" path="update"/>
+    </directory>
+  </assets>
 </module>
