@@ -37,10 +37,10 @@ Llo
       <use-document ref="data/missingSloth.emoji"/>
     </fragment>
     <directory name="static">
-      <resource-directory name="missingSloth@slothsoft.net" type="application/x-xpinstall" path="missingSloth@slothsoft.net"/>
-      <resource-directory name="missingSloth@slothsoft.net-manifest" type="application/rdf+xml" path="missingSloth@slothsoft.net"/>
-      <resource-directory name="missingSloth@slothsoft.net-signing" type="*/*" path="missingSloth@slothsoft.net/signing"/>
-      <resource-directory name="update" type="application/rdf+xml" path="update"/>
+      <resource-directory name="missingSloth@slothsoft.net" path="missingSloth@slothsoft.net" type="application/x-xpinstall"/>
+      <resource-directory name="missingSloth@slothsoft.net-manifest" path="missingSloth@slothsoft.net" type="application/rdf+xml"/>
+      <resource-directory name="missingSloth@slothsoft.net-signing" path="missingSloth@slothsoft.net/signing" type="*/*"/>
+      <resource-directory name="update" path="update" type="application/rdf+xml"/>
     </directory>
   </assets>
 </module>
