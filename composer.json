@@ -20,7 +20,7 @@
     },
 	"autoload": {
         "psr-4": {
-            "Slothsoft\\Extensions\\": "php/"
+            "Slothsoft\\Extensions\\": "src/Slothsoft/Extensions/"
         }
     }
 }
