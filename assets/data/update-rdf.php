@@ -4,7 +4,7 @@ namespace Slothsoft\Farah;
 use Slothsoft\Core\Storage;
 
 $ret = '';
-$ret .= sprintf('[%s] Starting updating extensions...%s%s', date(DATE_DATETIME), PHP_EOL, PHP_EOL);
+$ret .= sprintf('[%s] Starting updating extensions...%s%s', date(DateTimeFormatter::FORMAT_DATETIME), PHP_EOL, PHP_EOL);
 
 $docList = $this->getResourceDir('extensions/update', 'status');
 
@@ -13,7 +13,7 @@ foreach ($docList as $id => $doc) {
     
     $signingList = $this->getResourceDir(sprintf('extensions/%s-signing', $id), 'status');
     if (count($signingList) === 3) {
-        $ret .= sprintf('[%s] Updating "%s" at "%s":%s', date(DATE_DATETIME), $id, $updateFile, PHP_EOL);
+        $ret .= sprintf('[%s] Updating "%s" at "%s":%s', date(DateTimeFormatter::FORMAT_DATETIME), $id, $updateFile, PHP_EOL);
         
         $signedFile = null;
         $version = null;

@@ -3,7 +3,7 @@ namespace Slothsoft\Farah;
 
 
 $ret = '';
-$ret .= sprintf('[%s] Starting updating extensions...%s%s', date(DATE_DATETIME), PHP_EOL, PHP_EOL);
+$ret .= sprintf('[%s] Starting updating extensions...%s%s', date(DateTimeFormatter::FORMAT_DATETIME), PHP_EOL, PHP_EOL);
 
 $docList = $this->getResourceDir('extensions/update', 'status');
 
@@ -17,7 +17,7 @@ foreach ($docList as $id => $doc) {
         $binDir .= DIRECTORY_SEPARATOR;
         if ($extDir = realpath($extDir)) {
             $extDir .= DIRECTORY_SEPARATOR;
-            $ret .= sprintf('[%s] Updating "%s" at "%s":%s', date(DATE_DATETIME), $id, $binDir, PHP_EOL);
+            $ret .= sprintf('[%s] Updating "%s" at "%s":%s', date(DateTimeFormatter::FORMAT_DATETIME), $id, $binDir, PHP_EOL);
             
             $installFile = $binDir . 'install.rdf';
             if ($installDoc = self::loadDocument($installFile)) {
