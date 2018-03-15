@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<assets xmlns="http://schema.slothsoft.net/farah/module">
+    <resource-directory name="data" path="data" type="application/x-php"/>
+    <resource-directory name="css" path="stylesheet" type="text/css"/>
+    <resource-directory name="js" path="script" type="application/javascript"/>
+    <resource-directory name="xsl" path="template" type="application/xslt+xml"/>
+    <resource-directory name="dictionary" path="dictionary" type="application/xml"/>
+    <resource-directory name="pages" path="pages" type="application/xml"/>
+    <directory name="static">
+      <resource-directory name="missingSloth-slothsoft.net" path="missingSloth@slothsoft.net" type="application/x-xpinstall"/>
+      <resource-directory name="missingSloth-slothsoft.net-manifest" path="missingSloth@slothsoft.net" type="application/rdf+xml"/>
+      <resource-directory name="missingSloth-slothsoft.net-signing" path="missingSloth@slothsoft.net/signing" type="*/*"/>
+      <resource-directory name="update" path="update" type="application/rdf+xml"/>
+    </directory>
+    <fragment name="update">
+      <use-template ref="xsl/update-rdf"/>
+      <use-document ref="data/repository"/>
+      <param name="standalone" scope="global"/>
+    </fragment>
+    <fragment name="home-missingSloth">
+      <use-template ref="xsl/home"/>
+      <use-document as="extension" ref="static/missingSloth@slothsoft.net"/>
+    </fragment>
+    <fragment name="missingSloth-emoji">
+      <param name="standalone" scope="global"/>
+      <use-template ref="xsl/missingSloth.emoji"/>
+      <use-document ref="data/missingSloth.emoji"/>
+    </fragment>
+  </assets>
